@@ -1,0 +1,33 @@
+.v-button {
+  padding: $button-padding;
+  line-height: 1;
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+  border-width: $button-border-width;
+  border-style: $button-border-style;
+  border-radius: $button-radius;
+  transition: .15s ease-in 0s;
+  @each $name, $current-color in $button-colors {
+    $color: nth($current-color, 1);
+    $alternative: nth($current-color, 2);
+
+    &--#{$name} {
+      background: $color;
+      color: $alternative;
+      border-color: $color;
+
+      &:hover {
+        $adjusted-color: adjust_color($color, $lightness: $button-hover-color-change);
+        background: $adjusted-color;
+        border-color: $adjusted-color
+      }
+
+      &.is-outlined {
+        background-color: transparent;
+        color: $color;
+        border-color: $color;
+      }
+    }
+  }
+}

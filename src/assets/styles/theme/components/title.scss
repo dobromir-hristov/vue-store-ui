@@ -1,0 +1,11 @@
+.title {
+  color: $title-color;
+  font-family: $title-font-family;
+  margin-top: .5em;
+  margin-bottom: .75em;
+  @each $sizeName, $sizeValue in $title-sizes {
+    &--size-#{$sizeName} {
+      font-size: $sizeValue;
+    }
+  }
+}
