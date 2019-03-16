@@ -13,6 +13,7 @@ import TheFooter from '@/components/app_specific/TheFooter'
 import TheHeader from '@/components/app_specific/TheHeader'
 
 /**
+ * Generic layout with nav and footer
  * @module GeneralLayout
  */
 export default {

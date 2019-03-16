@@ -1,6 +1,7 @@
 import * as vueTestUtils from '@vue/test-utils'
 import Vuex from 'vuex'
 import _merge from 'lodash.merge'
+import _cloneDeep from 'lodash.clonedeep'
 
 import '../../src/globalComponents'
 
@@ -75,4 +76,11 @@ global.createComponentMocks = ({ store, router, style, mocks, stubs } = {}) => {
   }
 
   return returnOptions
+}
+
+global.createModuleStore = (vuexModule, options = {}) => {
+  vueTestUtils.createLocalVue().use(Vuex)
+  return new Vuex.Store({
+    ..._cloneDeep(vuexModule)
+  })
 }

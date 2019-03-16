@@ -1,9 +1,17 @@
 <template>
-  <div class="home">
-    <img
-      alt="Vue logo"
-      src="../assets/logo.png"
+  <div class="home flex flex-col">
+    <router-link
+      :to="{ name:'kitchen-sink' }"
+      class="no-underline text-grey-dark mb-4"
     >
+      Kitchen Sink
+    </router-link>
+    <router-link
+      :to="{ name:'product' }"
+      class="no-underline text-grey-dark mb-4"
+    >
+      Product
+    </router-link>
   </div>
 </template>
 
