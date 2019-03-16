@@ -1,5 +1,8 @@
 <template>
-  <div id="app">
+  <div
+    id="app"
+    class="min-h-screen flex is-column"
+  >
     <!-- We could later add layout switcher on a per page basis -->
     <general-layout>
       <router-view/>

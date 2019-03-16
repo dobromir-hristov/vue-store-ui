@@ -1,14 +1,22 @@
 <template>
-  <div class="GeneralLayout container container--padded">
-    <slot/>
+  <div class="flex flex-col flex-1">
+    <the-header/>
+    <div class="GeneralLayout container px-4 mx-auto flex-1 mt-16">
+      <slot/>
+    </div>
+    <the-footer/>
   </div>
 </template>
 
 <script>
+import TheFooter from '@/components/app_specific/TheFooter'
+import TheHeader from '@/components/app_specific/TheHeader'
+
 /**
  * @module GeneralLayout
  */
 export default {
-  name: 'GeneralLayout'
+  name: 'GeneralLayout',
+  components: { TheHeader, TheFooter }
 }
 </script>

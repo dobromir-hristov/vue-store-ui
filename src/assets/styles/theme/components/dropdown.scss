@@ -1,0 +1,29 @@
+.VDropdown {
+  position: relative;
+}
+
+.VDropdown__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  background: $white;
+  padding: $spacing-default;
+  box-shadow: 0 2px 2px $grey-color;
+  min-width: 200px;
+
+  &.is-right, &.is-left {
+    transform: translate(0);
+  }
+
+  &.is-right {
+    left: auto;
+    right: 0;
+  }
+
+  &.is-left {
+    left: 0;
+    right: auto;
+  }
+}
