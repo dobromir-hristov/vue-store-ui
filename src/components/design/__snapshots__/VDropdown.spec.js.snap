@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VDropdown allows toggling the dropdown on/off 1`] = `
+<div class="VDropdown"><a data-testid="trigger">CLICK</a>
+  <div class="VDropdown__dropdown">DROPDOWN_CONTENT</div>
+</div>
+`;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MiniCart renders the items 1`] = `
+<div class="MiniCart">
+  <div>
+    <div data-testid="MiniCartItem" class="flex justify-between items-center">
+      <div><a data-testid="removeItem" class="text-red"><i class="fa-times fas fa-xs fa-fw"></i></a>
+        Whatever
+      </div>
+      <div><i class="fa-times fas fa-fw"></i>
+        1
+      </div>
+    </div>
+    <div data-testid="MiniCartItem" class="flex justify-between items-center">
+      <div><a data-testid="removeItem" class="text-red"><i class="fa-times fas fa-xs fa-fw"></i></a>
+        Whatever 2
+      </div>
+      <div><i class="fa-times fas fa-fw"></i>
+        1
+      </div>
+    </div>
+  </div>
+</div>
+`;
