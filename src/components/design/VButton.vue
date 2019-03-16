@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="[`v-button--${color}`, { 'is-outlined': outlined }]"
+    :class="computedClasses"
     class="v-button"
   >
     <slot/>
@@ -16,11 +16,29 @@ export default {
   props: {
     color: {
       type: String,
-      default: 'primary'
+      default: 'primary' // we could add a color validator here
     },
     outlined: {
       type: Boolean,
       default: false
+    },
+    size: {
+      type: String,
+      default: '' // we could probably add a size validator here
+    },
+    active: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    computedClasses () {
+      return [
+        `v-button--${this.color}`,
+        { 'is-active': this.active },
+        { 'is-outlined': this.outlined },
+        { [`v-button--size-${this.size}`]: this.size }
+      ]
     }
   }
 }

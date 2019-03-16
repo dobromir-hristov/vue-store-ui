@@ -11,6 +11,7 @@
   @each $name, $current-color in $button-colors {
     $color: nth($current-color, 1);
     $alternative: nth($current-color, 2);
+    $adjusted-color: adjust_color($color, $lightness: $button-hover-color-change);
 
     &--#{$name} {
       background: $color;
@@ -18,7 +19,6 @@
       border-color: $color;
 
       &:hover {
-        $adjusted-color: adjust_color($color, $lightness: $button-hover-color-change);
         background: $adjusted-color;
         border-color: $adjusted-color
       }
@@ -27,7 +27,23 @@
         background-color: transparent;
         color: $color;
         border-color: $color;
+
+        &:hover {
+          color: $alternative;
+          background-color: $adjusted-color;
+        }
       }
+
+      &.is-active {
+        border-color: $adjusted-color;
+        background-color: $adjusted-color;
+        color: $alternative;
+      }
+    }
+  }
+  @each $sizeName, $sizeValue in $button-sizes {
+    &--size-#{$sizeName} {
+      font-size: $sizeValue;
     }
   }
 }

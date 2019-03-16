@@ -9,15 +9,19 @@ $error-color: #C24345 !default;
 
 /* Typography */
 $font-family-primary: Arial, sans-serif;
+$text-color-muted: #777777;
 
 /* Button */
-$button-padding: .5rem 1rem !default;
+$button-padding: .5em 1.5em !default; // sizes are in EM's so buttons grow proportionally with Font Size
+
 $button-colors: (
         primary: ($primary-color, $white),
         secondary: ($secondary-color, $black),
         success: ($success-color, $black),
         error: ($error-color, $white)
 ) !default;
+
+$button-sizes: (small: .8rem, medium: 1rem, large: 1.2rem, xlarge: 1.5rem) !default;
 
 $button-border-width: 1px !default;
 $button-border-style: solid !default;
@@ -30,10 +34,10 @@ $title-font-family: $font-family-primary !default;
 $title-sizes: (1: 32px, 2: 38px, 3: 25px, 4: 22px, 5: 18px, 6: 16px, 7: 13px) !default;
 
 /* Container max-width*/
-$container-max-width: 1200px;
+$container-max-width: 1200px !default;
 
 /* Spacing Sizes */
-$spacing-default: 1rem;
-$spacing-medium: 1.2rem;
-$spacing-large: 1.5rem;
-$spacing-xlarge: 2rem;
+$spacing-default: 1rem !default;
+$spacing-medium: 1.2rem !default;
+$spacing-large: 1.5rem !default;
+$spacing-xlarge: 2rem !default;
