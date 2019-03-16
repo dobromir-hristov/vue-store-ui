@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VButton renders the VButton with default class 1`] = `<button class="v-button v-button--primary"><span class="v-button__text">BUTTON TEXT</span></button>`;
+
+exports[`VButton renders the button with all props 1`] = `<button class="v-button v-button--secondary is-active is-outlined v-button--size-lg is-loading is-square"><span class="v-button__text">BUTTON TEXT</span></button>`;
