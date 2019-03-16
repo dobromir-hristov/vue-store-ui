@@ -2,8 +2,11 @@
   <button
     :class="computedClasses"
     class="v-button"
+    v-on="$listeners"
   >
-    <slot/>
+    <span class="v-button__text">
+      <slot/>
+    </span>
   </button>
 </template>
 
@@ -26,7 +29,15 @@ export default {
       type: String,
       default: '' // we could probably add a size validator here
     },
+    square: {
+      type: Boolean,
+      default: false
+    },
     active: {
+      type: Boolean,
+      default: false
+    },
+    loading: {
       type: Boolean,
       default: false
     }
@@ -37,7 +48,9 @@ export default {
         `v-button--${this.color}`,
         { 'is-active': this.active },
         { 'is-outlined': this.outlined },
-        { [`v-button--size-${this.size}`]: this.size }
+        { [`v-button--size-${this.size}`]: this.size },
+        { 'is-loading': this.loading },
+        { 'is-square': this.square }
       ]
     }
   }
