@@ -1,6 +1,6 @@
 <template>
   <newsletter-subscribe-provider
-    v-slot="{ actions, loading, disabled, isSubscribed }"
+    v-slot="{ toggleSubscription, loading, disabled, isSubscribed }"
     newsletter-id="main_newsletter"
   >
     <v-button
@@ -8,8 +8,8 @@
       :disabled="disabled"
       size="large"
       type="alternative"
-      outlined
-      @click="actions.toggleSubscription"
+      :outlined="!isSubscribed"
+      @click="toggleSubscription"
     >
       <span v-if="isSubscribed">Unsubscribe</span>
       <span v-else>Subscribe</span>

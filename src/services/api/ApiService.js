@@ -1,7 +1,7 @@
 /* Here is where we could create our Api service, currently a mocked one */
 const DELAY = 500
 
-const delayedResolvePromise = (delay = DELAY) => new Promise(resolve => setTimeout(() => resolve, delay))
+const delayedResolvePromise = (delay = DELAY) => new Promise(resolve => setTimeout(() => resolve(), delay))
 
 const axiosInstance = {
   get: () => delayedResolvePromise(),

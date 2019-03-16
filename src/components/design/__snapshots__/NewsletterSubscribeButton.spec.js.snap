@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewsletterSubscribeButton renders the NewsletterSubscribeButton 1`] = `<button class="v-button v-button--primary is-outlined v-button--size-large" type="alternative"><span class="v-button__text"><span>Subscribe</span></span></button>`;

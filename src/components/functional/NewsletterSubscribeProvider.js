@@ -29,6 +29,7 @@ export default {
       this.loading = true
       try {
         await NewsletterService.subscribe(this.userId, this.newsletterId)
+        this.isSubscribed = true
       } catch (err) {
         this.$handleErrors(err)
       } finally {
@@ -39,7 +40,8 @@ export default {
       if (!this.isLoggedIn) return
       this.loading = true
       try {
-        NewsletterService.unsubscribe(this.userId, this.newsletterId)
+        await NewsletterService.unsubscribe(this.userId, this.newsletterId)
+        this.isSubscribed = false
       } catch (err) {
         this.$handleErrors(err)
       } finally {
@@ -50,16 +52,14 @@ export default {
       if (this.isSubscribed) {
         return this.unsubscribe()
       }
-      this.subscribe()
+      return this.subscribe()
     }
   },
   render () {
     return this.$scopedSlots.default({
-      actions: {
-        subscribe: this.subscribe,
-        unsubscribe: this.unsubscribe,
-        toggleSubscription: this.toggleSubscription
-      },
+      subscribe: this.subscribe,
+      unsubscribe: this.unsubscribe,
+      toggleSubscription: this.toggleSubscription,
       loading: this.loading,
       disabled: !this.isLoggedIn,
       isSubscribed: this.isSubscribed
