@@ -6,6 +6,7 @@ $white: #FFFAFF !default;
 
 $success-color: #76A79C !default;
 $error-color: #C24345 !default;
+$grey-color: #f2f2f2 !default;
 
 /* Typography */
 $font-family-primary: Arial, sans-serif;
@@ -33,10 +34,8 @@ $title-color: $primary-color !default;
 $title-font-family: $font-family-primary !default;
 $title-sizes: (1: 32px, 2: 38px, 3: 25px, 4: 22px, 5: 18px, 6: 16px, 7: 13px) !default;
 
-/* Container max-width*/
-$container-max-width: 1200px !default;
-
 /* Spacing Sizes */
+$spacing-small: .8rem !default;
 $spacing-default: 1rem !default;
 $spacing-medium: 1.2rem !default;
 $spacing-large: 1.5rem !default;

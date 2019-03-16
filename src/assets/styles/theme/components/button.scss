@@ -3,11 +3,54 @@
   line-height: 1;
   outline: none;
   cursor: pointer;
-  margin: 0;
   border-width: $button-border-width;
   border-style: $button-border-style;
   border-radius: $button-radius;
-  transition: .15s ease-in 0s;
+  transition: .15s ease-in;
+  overflow: hidden;
+  position: relative;
+
+  &:disabled, &.disabled {
+    opacity: .7;
+    cursor: not-allowed;
+  }
+
+  .v-button__text {
+    transition: .15s ease-in;
+  }
+
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    content: 'Loading...';
+    text-align: center;
+    opacity: 0;
+    transition: .15s ease-in;
+    transform: translateY(-100%)
+  }
+
+  &.is-loading {
+    position: relative;
+
+    .v-button__text {
+      opacity: 0;
+    }
+
+    &:before {
+      opacity: 1;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+  }
+
+  // This could use some love hehe
+  &.is-square {
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+
   @each $name, $current-color in $button-colors {
     $color: nth($current-color, 1);
     $alternative: nth($current-color, 2);
