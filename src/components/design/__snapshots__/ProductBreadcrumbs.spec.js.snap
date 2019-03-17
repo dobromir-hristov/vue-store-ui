@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductBreadcrumbs renders the ProductBreadcrumbs 1`] = `
+<div class="ProductBreadcrumbs flex mb-4">
+  <div class="ProductBreadcrumb mr-2 flex text-grey">
+    <div class="ProductBreadcrumbsItem">
+      <router-link-stub to="[object Object]" class="mr-2 text-grey-dark ml-0">
+        Default Category
+      </router-link-stub>
+      /
+    </div>
+  </div>
+  <div class="ProductBreadcrumb mr-2 flex text-grey">
+    <div class="ProductBreadcrumbsItem">
+      <router-link-stub to="[object Object]" class="mr-2 text-grey-dark">
+        Women
+      </router-link-stub>
+      /
+    </div>
+  </div>
+</div>
+`;

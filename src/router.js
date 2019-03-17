@@ -21,9 +21,14 @@ export default new Router({
       component: asyncLoad('KitchenSink')
     },
     {
-      path: '/product/{productId}',
+      path: '/product/:productId',
       name: 'product',
       component: asyncLoad('Product')
+    },
+    {
+      path: '/category/:id',
+      name: 'category',
+      component: asyncLoad('Category')
     }
   ]
 })

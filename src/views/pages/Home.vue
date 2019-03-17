@@ -7,7 +7,7 @@
       Kitchen Sink
     </router-link>
     <router-link
-      :to="{ name:'product' }"
+      :to="{ name:'product', params: { productId: 'some_id' } }"
       class="no-underline text-grey-dark mb-4"
     >
       Product

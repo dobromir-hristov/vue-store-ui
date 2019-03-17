@@ -3,5 +3,11 @@ html {
 }
 
 a {
+  text-decoration: none;
   cursor: pointer;
+  color: $brand-primary-color;
+
+  &:hover {
+    color: $brand-secondary-color;
+  }
 }
