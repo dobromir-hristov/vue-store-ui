@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentProductAddToCart renders the CurrentProductAddToCart 1`] = `
+<button class="v-button v-button--primary" type="primary"><span class="v-button__text">
+  Add to Cart
+</span></button>
+`;
