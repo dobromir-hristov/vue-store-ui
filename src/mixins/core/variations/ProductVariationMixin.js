@@ -18,6 +18,7 @@ export const ProductVariation = {
   methods: {
     ...mapActions('product/productForm', ['chooseVariation']),
     chooseVariationType (variationTypeId) {
+      this.$root.$emit('VariationPicker:change', `${this.variation.id}__${variationTypeId}`)
       this.chooseVariation({ id: this.variation.id, value: variationTypeId })
     }
   }
