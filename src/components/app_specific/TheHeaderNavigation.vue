@@ -18,9 +18,9 @@
     <div class="TheHeaderNavigation__item">
       <cart-trigger/>
     </div>
-    <div class="TheHeaderNavigation__item">
-      <profile-trigger/>
-    </div>
+    <!--<div class="TheHeaderNavigation__item">-->
+      <!--<profile-trigger/>-->
+    <!--</div>-->
   </div>
 </template>
 

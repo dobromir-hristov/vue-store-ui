@@ -1,14 +1,16 @@
 import { Product } from '@/models/Product'
 import { ProductService } from '@/services/api/ProductService'
+import productForm from './productForm'
 
 const SET_PRODUCT = 'SET_PRODUCT'
 
-const state = {
+const state = () => ({
   /** @type Product */
   product: null
-}
+})
 
 const getters = {
+  productLoaded: state => !!state.product,
   product: state => state.product
 }
 
@@ -19,9 +21,10 @@ const mutations = {
 }
 
 const actions = {
-  async fetchProduct ({ commit }, productId) {
+  async fetchProduct ({ commit, dispatch }, productId) {
     const product = await ProductService.fetchProduct(productId)
     commit(SET_PRODUCT, product)
+    dispatch('productForm/prepareForm', product)
   }
 }
 
@@ -30,5 +33,6 @@ export default {
   getters,
   mutations,
   actions,
+  modules: { productForm },
   namespaced: true
 }

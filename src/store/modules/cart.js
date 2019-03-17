@@ -22,7 +22,9 @@ const getters = {
 const mutations = {
   [REMOVE_ITEM] (state, productId) {
     const index = state.items.findIndex(i => i.id === productId)
-    state.items.splice(index, 1)
+    if (index !== -1) {
+      state.items.splice(index, 1)
+    }
   },
   [SET_ITEMS]: basicSetter('items'),
   /**
@@ -31,7 +33,7 @@ const mutations = {
    */
   [ADD_ITEM] (state, product) {
     const index = state.items.findIndex(p => p.id === product.id)
-    if (index !== undefined) {
+    if (index !== -1) {
       state.items[index].quantity += product.quantity
     } else {
       state.items.push(product)

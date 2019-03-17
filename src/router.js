@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Home from './views/pages/Home.vue'
 
 Vue.use(Router)
 
 function asyncLoad (path) {
-  return () => import(/* webpackChunkName: "[request]" */ `@/views/${path}.vue`)
+  return () => import(/* webpackChunkName: "[request]" */ `@/views/pages/${path}.vue`)
 }
 
 export default new Router({
@@ -19,6 +19,11 @@ export default new Router({
       path: '/kitchen-sink',
       name: 'kitchen-sink',
       component: asyncLoad('KitchenSink')
+    },
+    {
+      path: '/product/{productId}',
+      name: 'product',
+      component: asyncLoad('Product')
     }
   ]
 })
