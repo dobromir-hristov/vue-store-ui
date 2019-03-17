@@ -53,6 +53,9 @@ const getters = {
   quantity (state) {
     if (!state.productForm) return 0
     return state.productForm.quantity
+  },
+  canAddToCart (state, getters) {
+    return getters.quantity > 0
   }
 }
 
@@ -89,6 +92,13 @@ const actions = {
    */
   chooseVariation ({ commit }, value) {
     commit(UPDATE_VARIATION, value)
+  },
+  addToCart ({ getters, dispatch }) {
+    const productReadyForCart = {
+      ...getters.productForm,
+      price: getters.price
+    }
+    dispatch('cart/addItem', productReadyForCart, { root: true })
   }
 }
 

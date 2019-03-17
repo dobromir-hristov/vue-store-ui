@@ -26,14 +26,14 @@
           :product="product"
         />
         <current-product-variations/>
-        <product-quantity-picker/>
-        <add-to-cart-button/>
+        <product-quantity-picker class="mb-6"/>
+        <current-product-add-to-cart/>
         <div class="columns">
           <div class="column">
-            <add-to-favorute :product="product"/>
+            <!--<add-to-favourite :product="product"/>-->
           </div>
           <div class="column">
-            <add-to-compare :product="product"/>
+            <!--<add-to-compare :product="product"/>-->
           </div>
         </div>
       </div>
@@ -49,13 +49,22 @@ import ProductBreadcrumbs from '@/components/design/ProductBreadcrumbs'
 import CurrentProductPrice from '@/components/design/CurrentProductPrice'
 import CurrentProductVariations from '@/components/design/CurrentProductVariations'
 import ProductQuantityPicker from '@/components/design/ProductQuantityPicker'
+import CurrentProductAddToCart from '@/components/design/CurrentProductAddToCart'
 
 /**
  * @module page/Product
  */
 export default {
   name: 'Product',
-  components: { ProductQuantityPicker, CurrentProductVariations, CurrentProductPrice, ProductSku, ProductBreadcrumbs, ProductGallery },
+  components: {
+    CurrentProductAddToCart,
+    ProductQuantityPicker,
+    CurrentProductVariations,
+    CurrentProductPrice,
+    ProductSku,
+    ProductBreadcrumbs,
+    ProductGallery
+  },
   mixins: [ProductMixin]
 }
 </script>

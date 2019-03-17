@@ -5,9 +5,7 @@ export const SET_ITEMS = 'SET_ITEMS'
 export const ADD_ITEM = 'ADD_ITEM'
 
 const state = {
-  items: [
-    { name: 'Shoes', id: 'product-id', quantity: 2 }
-  ]
+  items: []
 }
 
 const getters = {
@@ -29,7 +27,7 @@ const mutations = {
   [SET_ITEMS]: basicSetter('items'),
   /**
    * Adds a product to the items list
-   * @param {Product} product
+   * @param {ProductForm} product
    */
   [ADD_ITEM] (state, product) {
     const index = state.items.findIndex(p => p.id === product.id)

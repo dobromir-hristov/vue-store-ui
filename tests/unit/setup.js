@@ -25,7 +25,10 @@ global.createComponentMocks = ({ store, router, style, mocks, stubs } = {}) => {
   // https://vue-test-utils.vuejs.org/api/options.html#stubs
   returnOptions.stubs = stubs || {}
   // https://vue-test-utils.vuejs.org/api/options.html#mocks
-  returnOptions.mocks = mocks || {}
+  returnOptions.mocks = {
+    $swal: jest.fn(),
+    ...mocks
+  }
 
   // Converts a `store` option shaped like:
   //

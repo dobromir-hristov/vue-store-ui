@@ -5,6 +5,7 @@
       <input
         v-model.number="quantity"
         type="number"
+        min="0"
         class="w-16 border-b border-gray pb-2"
       >
     </div>
