@@ -2,6 +2,7 @@ import { ProductForm } from '@/models/ProductForm'
 
 const PREPARE_PRODUCT_FORM = 'PREPARE_PRODUCT_FORM'
 const UPDATE_VARIATION = 'UPDATE_VARIATION'
+const SET_QUANTITY = 'SET_QUANTITY'
 
 const state = {
   /** @type ProductForm */
@@ -48,6 +49,10 @@ const getters = {
     return getters.productForm.price +
       getters.chosenVariationsDetailedList
         .reduce((all, current) => all + current.price, 0)
+  },
+  quantity (state) {
+    if (!state.productForm) return 0
+    return state.productForm.quantity
   }
 }
 
@@ -62,6 +67,9 @@ const mutations = {
   },
   [UPDATE_VARIATION] (state, variation) {
     state.productForm.variations[variation.id] = variation.value
+  },
+  [SET_QUANTITY] (state, quantity) {
+    state.productForm.quantity = quantity
   }
 }
 

@@ -8,6 +8,7 @@ export class ProductForm {
     this.name = product.name
     this.price = product.price
     this.variations = this.transformVariations(product)
+    this.quantity = 1
     // this.variations = {
     //   color: 'blue',
     //   size: 'xl'

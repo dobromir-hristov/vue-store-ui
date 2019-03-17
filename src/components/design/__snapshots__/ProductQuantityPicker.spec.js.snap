@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductQuantityPicker renders the ProductQuantityPicker 1`] = `
+<div class="ProductQuantityPicker"><label class="mb-2 block">Quantity</label>
+  <div><input type="number" class="w-16 border-b border-gray pb-2"></div>
+</div>
+`;

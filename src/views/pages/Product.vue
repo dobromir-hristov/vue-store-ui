@@ -48,13 +48,14 @@ import ProductGallery from '@/components/design/ProductGallery'
 import ProductBreadcrumbs from '@/components/design/ProductBreadcrumbs'
 import CurrentProductPrice from '@/components/design/CurrentProductPrice'
 import CurrentProductVariations from '@/components/design/CurrentProductVariations'
+import ProductQuantityPicker from '@/components/design/ProductQuantityPicker'
 
 /**
  * @module page/Product
  */
 export default {
   name: 'Product',
-  components: { CurrentProductVariations, CurrentProductPrice, ProductSku, ProductBreadcrumbs, ProductGallery },
+  components: { ProductQuantityPicker, CurrentProductVariations, CurrentProductPrice, ProductSku, ProductBreadcrumbs, ProductGallery },
   mixins: [ProductMixin]
 }
 </script>
