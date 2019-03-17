@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductPrice renders the ProductPrice 1`] = `
+<div class="ProductPrice font-serif text-3xl">
+  €55
+</div>
+`;

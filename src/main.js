@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store/store'
 import VueCarousel from 'vue-carousel'
+import './filters'
 import './globalComponents'
 
 Vue.use(VueCarousel)

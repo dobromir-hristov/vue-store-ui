@@ -21,7 +21,10 @@
         </h3>
 
         <product-sku/>
-        <product-price :product="product"/>
+        <current-product-price
+          class="my-6"
+          :product="product"
+        />
         <product-variations/>
         <product-quantity-picker/>
         <add-to-cart-button/>
@@ -40,20 +43,17 @@
 
 <script>
 import { ProductMixin } from '@/mixins/core/ProductMixin'
+import ProductSku from '@/components/design/ProductSku'
 import ProductGallery from '@/components/design/ProductGallery'
 import ProductBreadcrumbs from '@/components/design/ProductBreadcrumbs'
-import ProductSku from '@/components/design/ProductSku'
+import CurrentProductPrice from '@/components/design/CurrentProductPrice'
 
 /**
  * @module page/Product
  */
 export default {
   name: 'Product',
-  components: { ProductSku, ProductBreadcrumbs, ProductGallery },
+  components: { CurrentProductPrice, ProductSku, ProductBreadcrumbs, ProductGallery },
   mixins: [ProductMixin]
 }
 </script>
-
-<style lang='scss'>
-
-</style>

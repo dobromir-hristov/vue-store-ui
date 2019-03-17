@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentProductPrice renders the CurrentProductPrice 1`] = `
+<div class="ProductPrice font-serif text-3xl">
+  $37.5
+</div>
+`;

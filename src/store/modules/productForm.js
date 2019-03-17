@@ -11,12 +11,25 @@ const getters = {
   productForm: state => state.productForm,
   /**
    * Returns the SKU of a product based on the selected variations
-   * @param state
    * @return {string}
    */
-  sku (state) {
-    if (!state.productForm) return ''
-    return state.productForm.sku + '-' + Object.values(state.productForm.variations).join('-')
+  sku (state, getters) {
+    if (!getters.productForm) return ''
+    return getters.productForm.sku + '-' + getters.productForm.variations.map(v => v.id).join('-')
+  },
+  variationsMap (state, getters) {
+    if (!getters.productForm) return {}
+    return getters.productForm.variations
+      .reduce((all, current) => {
+        all[current.id] = current.value
+        return all
+      }, {})
+  },
+  price (state, getters) {
+    if (!getters.productForm) return 0
+    return getters.productForm.price +
+      getters.productForm.variations
+        .reduce((all, current) => all + current.price, 0)
   }
 }
 

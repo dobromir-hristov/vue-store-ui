@@ -6,6 +6,7 @@ export class ProductForm {
     this.id = product.id
     this.sku = product.sku
     this.name = product.name
+    this.price = product.price
     this.variations = this.transformVariations(product)
     // this.variations = {
     //   color: 'blue',
@@ -17,11 +18,9 @@ export class ProductForm {
     return product.variations.map(variationCategory => {
       return {
         id: variationCategory.id,
-        value: variationCategory.variations[0].id
+        value: variationCategory.variations[0].id,
+        price: variationCategory.price
       }
-    }).reduce((all, current) => {
-      all[current.id] = current.value
-      return all
-    }, {})
+    })
   }
 }

@@ -11,7 +11,8 @@ const state = () => ({
 
 const getters = {
   productLoaded: state => !!state.product,
-  product: state => state.product
+  product: state => state.product,
+  currency: state => state.product.currency
 }
 
 const mutations = {

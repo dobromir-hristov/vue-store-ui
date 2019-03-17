@@ -4,6 +4,7 @@ import _merge from 'lodash.merge'
 import _cloneDeep from 'lodash.clonedeep'
 
 import '../../src/globalComponents'
+import '../../src/filters'
 
 global._merge = _merge
 global.testid = (value) => `[data-testid="${value}"]`
@@ -49,9 +50,7 @@ global.createComponentMocks = ({ store, router, style, mocks, stubs } = {}) => {
           const storeModule = store[moduleName]
           return {
             [moduleName]: {
-              state: storeModule.state || {},
-              getters: storeModule.getters || {},
-              actions: storeModule.actions || {},
+              ...storeModule,
               namespaced:
                 typeof storeModule.namespaced === 'undefined'
                   ? true
