@@ -6,13 +6,14 @@ const SET_PRODUCT = 'SET_PRODUCT'
 
 const state = () => ({
   /** @type Product */
-  product: null
+  product: new Product()
 })
 
 const getters = {
-  productLoaded: state => !!state.product,
+  productLoaded: state => !!state.product.id,
   product: state => state.product,
-  currency: state => state.product.currency
+  currency: state => state.product.currency,
+  variations: state => state.product.variations
 }
 
 const mutations = {

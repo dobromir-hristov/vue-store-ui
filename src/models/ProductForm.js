@@ -14,13 +14,15 @@ export class ProductForm {
     // }
   }
 
+  /**
+   * Returns a map of the variation id and the id of it's first type
+   * @param product
+   * @return {Object.<string, string>}
+   */
   transformVariations (product) {
-    return product.variations.map(variationCategory => {
-      return {
-        id: variationCategory.id,
-        value: variationCategory.variations[0].id,
-        price: variationCategory.price
-      }
-    })
+    return product.variations.reduce((all, current) => {
+      all[current.id] = current.types[0].id
+      return all
+    }, {})
   }
 }

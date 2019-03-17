@@ -1,6 +1,7 @@
 import { ProductForm } from '@/models/ProductForm'
 
 const PREPARE_PRODUCT_FORM = 'PREPARE_PRODUCT_FORM'
+const UPDATE_VARIATION = 'UPDATE_VARIATION'
 
 const state = {
   /** @type ProductForm */
@@ -10,38 +11,76 @@ const state = {
 const getters = {
   productForm: state => state.productForm,
   /**
+   * Returns a list filtered list of the chosen types for each variation
+   * @return {Array}
+   */
+  chosenVariationsDetailedList (state, getters, rootState, rootGetters) {
+    return rootGetters['product/variations'].map((variation) => {
+      const chosenVariationType = variation.types.find(type => type.id === state.productForm.variations[variation.id])
+      return {
+        ...variation,
+        variationType: chosenVariationType
+      }
+    })
+  },
+  /**
    * Returns the SKU of a product based on the selected variations
    * @return {string}
    */
   sku (state, getters) {
     if (!getters.productForm) return ''
-    return getters.productForm.sku + '-' + getters.productForm.variations.map(v => v.id).join('-')
+    return getters.productForm.sku + '-' + getters.chosenVariationsDetailedList.map(v => v.variationType.id).join('-')
   },
-  variationsMap (state, getters) {
-    if (!getters.productForm) return {}
-    return getters.productForm.variations
-      .reduce((all, current) => {
-        all[current.id] = current.value
-        return all
-      }, {})
+  /**
+   * Returns the chosen variations
+   * @return {Object}
+   */
+  variations (state) {
+    if (!state.productForm) return {}
+    return state.productForm.variations
   },
+  /**
+   * Returns the price based on the variations
+   * @return {number}
+   */
   price (state, getters) {
     if (!getters.productForm) return 0
     return getters.productForm.price +
-      getters.productForm.variations
+      getters.chosenVariationsDetailedList
         .reduce((all, current) => all + current.price, 0)
   }
 }
 
 const mutations = {
+  /**
+   * Instantiates a new ProductForm model
+   * @param state
+   * @param {Object} product
+   */
   [PREPARE_PRODUCT_FORM] (state, product) {
     state.productForm = new ProductForm(product)
+  },
+  [UPDATE_VARIATION] (state, variation) {
+    state.productForm.variations[variation.id] = variation.value
   }
 }
 
 const actions = {
+  /**
+   * Called from the product Vuex module when a product page is loaded
+   * @param commit
+   * @param {Object} product
+   */
   prepareForm ({ commit }, product) {
     commit(PREPARE_PRODUCT_FORM, product)
+  },
+  /**
+   * Sets a new variation type.
+   * Called from withing variation pickers
+   * @param {*} value
+   */
+  chooseVariation ({ commit }, value) {
+    commit(UPDATE_VARIATION, value)
   }
 }
 

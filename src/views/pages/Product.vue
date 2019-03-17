@@ -25,7 +25,7 @@
           class="my-6"
           :product="product"
         />
-        <product-variations/>
+        <current-product-variations/>
         <product-quantity-picker/>
         <add-to-cart-button/>
         <div class="columns">
@@ -47,13 +47,14 @@ import ProductSku from '@/components/design/ProductSku'
 import ProductGallery from '@/components/design/ProductGallery'
 import ProductBreadcrumbs from '@/components/design/ProductBreadcrumbs'
 import CurrentProductPrice from '@/components/design/CurrentProductPrice'
+import CurrentProductVariations from '@/components/design/CurrentProductVariations'
 
 /**
  * @module page/Product
  */
 export default {
   name: 'Product',
-  components: { CurrentProductPrice, ProductSku, ProductBreadcrumbs, ProductGallery },
+  components: { CurrentProductVariations, CurrentProductPrice, ProductSku, ProductBreadcrumbs, ProductGallery },
   mixins: [ProductMixin]
 }
 </script>

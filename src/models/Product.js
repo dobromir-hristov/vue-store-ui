@@ -12,7 +12,7 @@
  * @class Product
  */
 export class Product {
-  constructor (product) {
+  constructor (product = {}) {
     /** @type {string} */
     this.id = product.id
     /** @type {string} */
@@ -20,15 +20,15 @@ export class Product {
     /** @type {string} */
     this.sku = product.sku
     /** @type {number} */
-    this.price = product.price
+    this.price = product.price || 0
     /** @type {string} */
-    this.currency = product.currency
+    this.currency = product.currency || 0
     /** @type {ProductVariationCategory[]} */
-    this.variations = product.variations
+    this.variations = product.variations || []
     /** @type {{ id:string, name:string, parent_id: string }[]} */
     this.categories = product.categories
     /** @type {string[]} */
-    this.gallery = product.gallery
+    this.gallery = product.gallery || []
     /** @type {string} */
     this.description = product.description
     /** @type {{ type:string, values: string[] }[]} */

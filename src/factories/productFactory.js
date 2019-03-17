@@ -19,7 +19,7 @@ export const productFactory = () => ({
     type: 'color',
     name: 'Color',
     price: 5,
-    variations: [
+    types: [
       { id: 'blue', name: 'Blue', value: 'blue' },
       { id: 'purple', name: 'Purple', value: 'purple' },
       { id: 'orange', name: 'Orange', value: 'orange' }
@@ -29,10 +29,19 @@ export const productFactory = () => ({
     type: 'size',
     name: 'Size',
     price: 10,
-    variations: [
+    types: [
       { id: 'm', name: 'Medium', value: 'm' },
       { id: 'l', name: 'Large', value: 'l' },
       { id: 'xl', name: 'XLarge', value: 'xl' }
+    ]
+  }, {
+    id: 'material',
+    type: 'material',
+    name: 'Material',
+    price: 0,
+    types: [
+      { id: 'cotton', name: 'Cotton', value: 'cotton' },
+      { id: 'cot50poli50', name: 'Cotton 50%, Polyester 50%', value: 'cot50poli50' }
     ]
   }
   ],
