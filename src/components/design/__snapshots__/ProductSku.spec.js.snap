@@ -1,0 +1,6 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductSku renders the ProductSku 1`] = `
+<div class="ProductSku text-grey text-sm">
+  SKU: <span class="uppercase">what-ev-er</span></div>
+`;

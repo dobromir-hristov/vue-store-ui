@@ -14,7 +14,7 @@ const getters = {
    * @param state
    * @return {string}
    */
-  formSKU (state) {
+  sku (state) {
     if (!state.productForm) return ''
     return state.productForm.sku + '-' + Object.values(state.productForm.variations).join('-')
   }

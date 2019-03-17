@@ -16,7 +16,7 @@
       <div class="column">
         <product-breadcrumbs :items="product.categories"/>
 
-        <h3 class="text-3xl font-serif">
+        <h3 class="text-4xl font-bold font-serif my-6">
           {{ product.name }}
         </h3>
 
@@ -42,13 +42,14 @@
 import { ProductMixin } from '@/mixins/core/ProductMixin'
 import ProductGallery from '@/components/design/ProductGallery'
 import ProductBreadcrumbs from '@/components/design/ProductBreadcrumbs'
+import ProductSku from '@/components/design/ProductSku'
 
 /**
  * @module page/Product
  */
 export default {
   name: 'Product',
-  components: { ProductBreadcrumbs, ProductGallery },
+  components: { ProductSku, ProductBreadcrumbs, ProductGallery },
   mixins: [ProductMixin]
 }
 </script>
