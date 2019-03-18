@@ -30,7 +30,7 @@ const mutations = {
    * @param {ProductForm} product
    */
   [ADD_ITEM] (state, product) {
-    const index = state.items.findIndex(p => p.id === product.id)
+    const index = state.items.findIndex(p => p.sku === product.sku)
     if (index !== -1) {
       state.items[index].quantity += product.quantity
     } else {

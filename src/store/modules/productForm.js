@@ -96,6 +96,7 @@ const actions = {
   addToCart ({ getters, dispatch }) {
     const productReadyForCart = {
       ...getters.productForm,
+      sku: getters.sku,
       price: getters.price
     }
     dispatch('cart/addItem', productReadyForCart, { root: true })
